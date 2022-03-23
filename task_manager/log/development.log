@@ -5128,3 +5128,37 @@ Processing by TasksController#index as TURBO_STREAM
 Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 8934)
 
 
+Started GET "/tasks" for ::1 at 2022-03-23 20:05:45 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  [1m[36mTask Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | Allocations: 1142)
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered collection of tasks/_task.html.erb [1 times] (Duration: 1.1ms | Allocations: 1384)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4728)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 71307)
+Completed 200 OK in 58ms (Views: 51.3ms | ActiveRecord: 0.4ms | Allocations: 85880)
+
+
+Started GET "/tasks" for ::1 at 2022-03-23 20:06:35 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  [1m[36mTask Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 2.0ms | Allocations: 1236)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered collection of tasks/_task.html.erb [1 times] (Duration: 1.8ms | Allocations: 1578)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 5125)
+  Rendered layout layouts/application.html.erb (Duration: 130.2ms | Allocations: 93436)
+Completed 200 OK in 142ms (Views: 132.5ms | ActiveRecord: 0.5ms | Allocations: 109370)
+
+
