@@ -1,0 +1,6 @@
+<%= form_with(model: task, class: "mb-7") do|form| %>
+<div class="mb-5 fill-green-600">
+   <%= form.text_field :description,  placeholder: "New Task", class: "inline-block shadow rounded-md w-80" %>
+  <%= form.submit "Save", disable_with: 'Saving...', class: "btn-primary py-2 ml-2  text-text-white bg-blue-500" %>
+</div>
+<% end %>

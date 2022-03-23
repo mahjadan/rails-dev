@@ -1,0 +1,17 @@
+
+
+<h1 class="text-2xl font-bold">Task Manager</h1>
+<p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+<%= notice %>
+</p>
+<div class="mt-4">
+    <%= render "form", task: @task %>
+</div>
+
+<div id="tasks" data-controller="tasks">
+    <h1 class="font-bold text-lg mg-7"> Tasks</h1>
+
+    <div class="px-5">
+        <%= render(@tasks)|| "You have no tasks yet." %>
+    </div>
+</div>

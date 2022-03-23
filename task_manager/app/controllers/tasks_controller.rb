@@ -1,0 +1,56 @@
+# todo add user the this application (migration already done)
+
+class TasksController < ApplicationController
+    def index
+        @tasks = Task.all
+        puts @tasks.count
+        @task = Task.new
+    end
+
+    def create
+        @task = Task.new(task_params)
+        respond_to do |format|
+            if @task.save
+                format.html { redirect_to tasks_url, notice: "Task added successfully."}
+            else
+                format.html { render :new, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def toggle
+        @task = Task.find(params[:id])
+        if @task
+            @task.update(completed: params[:completed])
+            render json: { message: 'success' }
+        else
+            render json: { message: 'not found' }, status: not_found
+        end
+
+    end
+
+    def edit
+        @task = Task.find(params[:id])
+    end
+
+    def destroy
+        @task = Task.find(params[:id])
+        @task.destroy()
+        redirect_to tasks_url, notice: 'Task deleted successfully.'
+    end
+
+    def update
+        @task = Task.find(params[:id])
+        respond_to do |format|
+            if @task.update(task_params)
+                format.html { redirect_to tasks_url, notice: 'Task updated successfully.' }
+            else
+                format.html { render :edit, status: unprocessable_entity }
+            end
+        end
+    end
+
+    def task_params
+        params.require(:task).permit(:description,:completed)
+    end
+end
